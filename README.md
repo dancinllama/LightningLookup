@@ -4,10 +4,10 @@ A lightning component for quick lookup functionality.  Uses SOSL, Lightning comp
 <p>A couple of notes:
 <ol>
 <li>
-1.  You will need to adjust the ltng:require tag to use the correct path to your LightningDesignSystem static resource.  This should be done in both svgIcon.cmp as well as LightningLookup.cmp.
+You will need to adjust the ltng:require tag to use the correct path to your LightningDesignSystem static resource.  This should be done in both svgIcon.cmp as well as LightningLookup.cmp.
 </li>
 <li>
-2.  If you have a namespace in your org, you should adjust <c:svgIcon> references in LightningLookup.cmp to use your existing namespace.  e.g., instead use <mynamespace:svgIcon>
+If you have a namespace in your org, you should adjust <c:svgIcon> references in LightningLookup.cmp to use your existing namespace.  e.g., instead use <mynamespace:svgIcon>
 </li>
 </ol>
 <p>
