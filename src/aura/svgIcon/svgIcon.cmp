@@ -1,0 +1,11 @@
+<aura:component >
+	<aura:attribute name="svgPath"        default="" type="String" description="the path for the icon in the static resource, this will be use in a SVG use tag" />
+	<aura:attribute name="class"          default="" type="String" description="the class of this SVG tag, can be use for CSS purpose" />
+	<div aura:id="svg_content">
+	<![CDATA[
+		<svg aria-hidden="true" class="{!v.class}">
+        	<use xlink:href="/resource/PATH_TO_LIGHTNING_DESIGN_SYSTEM_STATIC_RESOURCE_GOES_HERE/assets/icons/{!v.svgPath}"></use>
+        </svg>
+	]]>
+	</div>
+</aura:component>

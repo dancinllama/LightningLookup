@@ -1,0 +1,36 @@
+<aura:component controller="ll_ctrl_LightningLookup" implements="flexipage:availableForAllPageTypes,force:appHostable,forceCommunity:availableForAllPageTypes">
+    <aura:attribute name="sobjectsToSearch" type="String" description="List of sobject api names to search for" required="true"/>
+    <aura:attribute name="icons" type="String" description="Icons to associate with the sobjects to search for" required="true"/>
+    <aura:attribute name="records" type="sObject" description="record results" />
+    <aura:attribute name="searchString" type="String" description="Search string" />
+    <aura:attribute name="recordLimit" type="String" description="Limit the number of records returned for each type of object" default="5" />
+    <aura:attribute name="title" type="String" description="Title / label of the lookup component" />
+    <ltng:require styles="[PATH_TO_LDS_STATIC_RESOURCE_GOES_HERE]/assets/styles/salesforce-lightning-design-system-vf.css" />
+    <div class="slds">
+    	<div class="slds-lookup" data-select="multi" data-scope="single" data-typeahead="true">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="lookup">{!v.title}</label>
+                <div class="slds-lookup__control slds-input-has-icon slds-input-has-icon--right">
+                    <c:svgIcon class="slds-input__icon" svgPath="utility-sprite/svg/symbols.svg#search" />
+                    <ui:inputText aura:id="searchBox" label="Search:" class="slds-input--bare" value="{!v.searchString}" keyup="{!c.handleSearch}" updateOn="keyup"/>
+                </div>
+            </div>
+            <aura:renderIf isTrue="{!v.searchString.length > 0}">
+                <div class="slds-lookup__menu" role="listbox">
+                    <ul class="slds-lookup__list" role="presentation">
+                        <li class="slds-lookup__item" role="presentation">
+                            <a href="#" role="option"><c:svgIcon class="slds-icon slds-icon-text-default slds-icon--small" svgPath="utility-sprite/svg/symbols.svg#search" />&quot;{!v.searchString}&quot;</a>
+                        </li>
+                        <aura:iteration var="current" items="{!v.records}">
+                            <li class="slds-lookup__item" role="presentation">
+                                <a href="#" role="option">
+                                    <c:svgIcon class="slds-icon slds-icon-text-default slds-icon--small" svgPath="{!current.icon}" />
+                                    {!current.record.Name}</a>
+                            </li>
+                        </aura:iteration>
+                    </ul>
+                </div>
+            </aura:renderIf>
+        </div>
+    </div>
+</aura:component>
