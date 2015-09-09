@@ -1,6 +1,10 @@
 # LightningLookup
 A lightning component for quick lookup functionality.  Uses SOSL, Lightning components, and the Salesforce Lightning Design System (SLDS).  Also, works with generic sObjects.
 
+<p><a href="http://dancinllama.github.com/lightninglookup/lookup1.gif"><img src="http://dancinllama.github.com/lightninglookup/lookup1.gif" /></a></p>
+
+<p><a href="http://dancinllama.github.com/lightninglookup/lookup2.gif"><img src="http://dancinllama.github.com/lightninglookup/lookup2.gif" /></a></p>
+
 <p>A couple of notes:
 <ol>
 <li>
